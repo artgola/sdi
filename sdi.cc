@@ -28,8 +28,7 @@ main(int argc, const char* argv[])
 //  int res = generate_graph(g, args.nr_nodes, args.nr_edges, gen);
   int res = generate_Gabriel_graph(g, args.nr_nodes);
 //  generate_Gabriel_graph(graph &g, int nodes)
-  assert(res == args.nr_edges);
-
+//  assert(res == args.nr_edges);
   // Make sure there is only one component.
   assert(check_components(g));
 

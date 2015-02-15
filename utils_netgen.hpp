@@ -18,7 +18,7 @@
 #include <boost/graph/iteration_macros.hpp>
 #include <boost/iterator/counting_iterator.hpp>
 
-using namespace std;
+
 
 /**
  * Names the vertices.

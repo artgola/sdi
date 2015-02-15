@@ -70,12 +70,9 @@ generate_Gabriel_graph(graph &g, int nodes)
   unsigned int h = 100;
   unsigned int number = nodes;
   list<TNode *>P = generate_Nodes(w, h, number);
-  
   list<TTriangle *> triangles;
   delaunayTriangulation(triangles, P);
-
   convertDelaunay2GabrielGraph(P);
-
   unsigned int  edges = edgeNumber(P);
   
   map<TNode*, vertex> mapNV;
@@ -85,12 +82,11 @@ generate_Gabriel_graph(graph &g, int nodes)
   {
      mapNV.insert( pair<TNode*, const vertex&> (*it, *itV)  );
   }
-  
+  unsigned int count = 0;
   for (list<TNode *>::iterator it = P.begin(); it != P.end(); ++it, ++itV)
   {
       vertex src = mapNV[*it];
       set<TNode*> myEdges = (*it)->getEdges();
-      
       for (set<TNode*>::iterator itE = myEdges.begin(); itE != myEdges.end(); ++itE)
       {
          vertex dst = mapNV[*itE];      
